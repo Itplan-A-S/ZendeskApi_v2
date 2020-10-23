@@ -41,5 +41,26 @@ namespace ZendeskApi_v2.Models.Organizations
 
         [JsonProperty("organization_fields")]
         public IDictionary<string, object> OrganizationFields { get; set; }
+
+
+        public override bool Equals(object obj)
+        {
+            var Obj = obj as Organization;
+
+            if (
+                this.Id != Obj.Id ||
+                this.Name != Obj.Name
+                )
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

@@ -8,29 +8,39 @@ namespace ZendeskApi_v2.Models.Tickets
 {
     public class Ticket : BaseTicket
     {
+        private string recipient;
+        private string status;
+        private string priority;
+        private string subject;
+        private string description;
+        private string type;
+        private string externalId;
+
         [JsonProperty("external_id")]
-        public string ExternalId { get; set; }
+        public string ExternalId { get => externalId; set => externalId = value != null ? value.Trim() : value; }
+
 
         [JsonProperty("type")]
-        public string Type { get; set; }
+        public string Type { get => type; set => type = value != null ? value.Trim() : value; }
 
         /// <summary>
         /// This field can no longer be set. As of January 2013 use "Comment.Body" instead.
         /// </summary>
+        /// </summary>
         [JsonProperty("description")]
-        public string Description { get; internal set; }
+        public string Description { get => description; set => description = value != null ? value.Trim() : value; }
 
         [JsonProperty("subject")]
-        public string Subject { get; set; }
+        public string Subject { get => subject; set => subject = value != null ? value.Trim() : value; }
 
         [JsonProperty("priority")]
-        public string Priority { get; set; }
+        public string Priority { get => priority; set => priority = value != null ? value.Trim() : value; }
 
         [JsonProperty("status")]
-        public string Status { get; set; }
+        public string Status { get => status; set => status = value != null ? value.Trim() : value; }
 
         [JsonProperty("recipient")]
-        public string Recipient { get; set; }
+        public string Recipient { get => recipient; set => recipient = value != null ? value.Trim() : value; }
 
         [JsonProperty("requester_id")]
         public long? RequesterId { get; set; }
@@ -131,11 +141,45 @@ namespace ZendeskApi_v2.Models.Tickets
         /// </summary>
         [JsonProperty("incident_count")]
         public int? IncidentCount { get; set; }
-        
+
         /// <summary>
         /// Any follow-up tickets to this ticket.
         /// </summary>
         [JsonProperty("followup_ids")]
         public IList<long> FollowUpIds { get; set; }
+
+        public override bool Equals(object obj)
+        {
+
+            var Obj = obj as Ticket;
+
+            if (
+            this.Url != Obj.Url ||
+            this.Type != Obj.Type ||
+            this.Subject != Obj.Subject ||
+            this.Description != Obj.Description ||
+            this.Priority != Obj.Priority ||
+            this.Status != Obj.Status //||
+            ///this.ExternalId != Obj.ExternalId ||
+            ///this.Recipient != Obj.Recipient ||
+            ///this.RequesterId != Obj.RequesterId ||
+            ///this.SubmitterId != Obj.SubmitterId ||
+            ///this.AssigneeId != Obj.AssigneeId ||
+            ///this.OrganizationId != Obj.OrganizationId ||
+            ///this.GroupId != Obj.GroupId ||
+            ///this.ProblemId != Obj.ProblemId
+            )
+            {
+                return false;
+            }
+
+
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

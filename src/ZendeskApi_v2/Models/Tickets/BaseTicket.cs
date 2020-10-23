@@ -7,8 +7,10 @@ namespace ZendeskApi_v2.Models.Tickets
 {
     public class BaseTicket : ISearchable
     {
+        private string url;
+
         [JsonProperty("url")]
-        public string Url { get; set; }
+        public string Url { get => url; set => url = value != null ? value.Trim() : value; }
 
         [JsonProperty("id")]
         public long? Id { get; set; }

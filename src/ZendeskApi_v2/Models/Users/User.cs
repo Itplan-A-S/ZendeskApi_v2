@@ -92,5 +92,26 @@ namespace ZendeskApi_v2.Models.Users
         ///  abilities
         /// </summary>
         public dynamic Abilities { get; set; }
+
+
+        public override bool Equals(object obj)
+        {
+            var Obj = obj as User;
+
+            if (
+               this.Id != Obj.Id      ||
+               this.Name != Obj.Name
+            )
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }
