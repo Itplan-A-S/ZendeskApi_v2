@@ -73,10 +73,10 @@ namespace ZendeskApi_v2.Models.Tickets
         public IList<string> CollaboratorEmails { get; set; }
 
         [JsonProperty("forum_topic_id")]
-        public object ForumTopicId { get; set; }
+        public long? ForumTopicId { get; set; }
 
         [JsonProperty("problem_id")]
-        public object ProblemId { get; set; }
+        public long? ProblemId { get; set; }
 
         [JsonProperty("has_incidents")]
         public bool? HasIncidents { get; set; }
