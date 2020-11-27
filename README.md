@@ -12,10 +12,6 @@ If you have questions about your account or the api its self please contact the 
 Any and all are welcome to contribute to this project.
 Please read our [Contributing Guidelines](/.github/CONTRIBUTING.md)
 
-## Special Thanks
-
-Thank you to the team at [Zendesk](https://www.zendesk.com/) for their support. They provide this project with a sponsored account. Allowing a greater level of testing and faster support of API changes.
-
 ### License
 
 This code is released under the [Apache Version 2 License](LICENSE.md).
