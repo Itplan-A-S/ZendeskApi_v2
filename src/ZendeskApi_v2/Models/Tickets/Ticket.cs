@@ -8,6 +8,11 @@ namespace ZendeskApi_v2.Models.Tickets
 {
     public class Ticket : BaseTicket
     {
+        public enum CustomTypes : long
+        {
+            loesning = 360014135600
+        }
+
         private string recipient;
         private string status;
         private string priority;
@@ -89,7 +94,7 @@ namespace ZendeskApi_v2.Models.Tickets
         public IList<string> Tags { get; set; }
 
         [JsonProperty("custom_fields")]
-        public IList<CustomField> CustomFields { get; set; }
+        public List<CustomField> CustomFields { get; set; }
 
         [JsonProperty("satisfaction_rating")]
         public SatisfactionRating SatisfactionRating { get; set; }
