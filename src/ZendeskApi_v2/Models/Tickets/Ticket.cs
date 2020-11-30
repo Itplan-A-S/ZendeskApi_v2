@@ -8,10 +8,7 @@ namespace ZendeskApi_v2.Models.Tickets
 {
     public class Ticket : BaseTicket
     {
-        public enum CustomTypes : long
-        {
-            loesning = 360014135600
-        }
+        
 
         private string recipient;
         private string status;
