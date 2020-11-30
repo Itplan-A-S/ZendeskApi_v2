@@ -150,38 +150,38 @@ namespace ZendeskApi_v2.Models.Tickets
         [JsonProperty("followup_ids")]
         public IList<long> FollowUpIds { get; set; }
 
-        public override bool Equals(object obj)
-        {
-
-            var Obj = obj as Ticket;
-
-            if (
-            this.Url != Obj.Url ||
-            this.Type != Obj.Type ||
-            this.Subject != Obj.Subject ||
-            this.Description != Obj.Description ||
-            this.Priority != Obj.Priority ||
-            this.Status != Obj.Status //||
-            ///this.ExternalId != Obj.ExternalId ||
-            ///this.Recipient != Obj.Recipient ||
-            ///this.RequesterId != Obj.RequesterId ||
-            ///this.SubmitterId != Obj.SubmitterId ||
-            ///this.AssigneeId != Obj.AssigneeId ||
-            ///this.OrganizationId != Obj.OrganizationId ||
-            ///this.GroupId != Obj.GroupId ||
-            ///this.ProblemId != Obj.ProblemId
-            )
-            {
-                return false;
-            }
-
-
-            return true;
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
+       // public override bool Equals(object obj)
+       // {
+       //
+       //     var Obj = obj as Ticket;
+       //
+       //     if (
+       //     Url != Obj.Url ||
+       //     Type != Obj.Type ||
+       //     Subject != Obj.Subject ||
+       //     Description != Obj.Description ||
+       //     Priority != Obj.Priority ||
+       //     Status != Obj.Status ||
+       //     ExternalId != Obj.ExternalId ||
+       //     Recipient != Obj.Recipient ||
+       //     RequesterId != Obj.RequesterId ||
+       //     SubmitterId != Obj.SubmitterId ||
+       //     AssigneeId != Obj.AssigneeId ||
+       //     OrganizationId != Obj.OrganizationId ||
+       //     GroupId != Obj.GroupId ||
+       //     ProblemId != Obj.ProblemId
+       //     )
+       //     {
+       //         return false;
+       //     }
+       //
+       //
+       //     return true;
+       // }
+       //
+       // public override int GetHashCode()
+       // {
+       //     return base.GetHashCode();
+       // }
     }
 }
